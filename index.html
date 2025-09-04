@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internet Angel</title>
+  <style>
+    /* Base */
+    :root {
+      --max-width: 1000px;
+      --sidebar-width: 250px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #cb5555;
+      background-image: url(background.gif);
+      /* no flex here so the header can span full width */
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: #333;
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* title centered */
+      padding: 0.75rem 1rem;
+    }
+    .site-header h1 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    /* Toggle (hidden on desktop, shown on mobile) */
+    .toggle-btn {
+      display: none;
+      position: absolute; /* keep it at top-left without shifting the title */
+      left: 1rem;
+      top: 0.5rem;
+      background: #444;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* Main layout wrapper */
+    .container {
+      display: flex;
+      gap: 1rem;
+      color: #e8e8e8;
+      max-width: var(--max-width);
+      margin: 0 auto;          /* centers the whole block */
+      padding: 2rem 1rem;
+      justify-content: center; /* keeps sidebar + content near middle */
+      align-items: flex-start;
+    }
+
+    /* Sidebar (desktop floating box) */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: #131315;
+      border: 2px solid #2d0f0f;
+      border-radius: 10px;
+      padding: 1rem;
+      position: fixed;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      height: fit-content;
+      margin-top: 1vh; /* sits further down on desktop */
+      margin-left: -110vh;
+    }
+
+    /* Main content column */
+    .content {
+      flex: 1;
+      max-width: 600px;
+      background: #131315;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-right: -40vh;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0; /* content starts right under sticky header */
+      }
+
+      /* Mobile drawer sidebar */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;        /* fully hidden off-screen */
+        width: var(--sidebar-width);
+        height: 100%;
+        margin-top: 0;      /* reset desktop offset */
+        border-radius: 0 10px 10px 0;
+        transition: left 0.3s ease;
+        z-index: 1000;      /* below header (1200) */
+        overflow-y: auto;
+      }
+      .sidebar.active {
+        left: 0;
+      }
+
+      /* Show the toggle inside the header only on mobile */
+      .toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Give content some breathing room under the header */
+      .content {
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <marquee>
+            <img src="rawr.gif">
+            </marquee>
+    </header>
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+  <div class="container">
+    <div class="sidebar">
+        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <img src="poster.jpg">
+      <h2>welcome</h2>
+      <p>owo</p>
+      <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>uwu you found me!</h1>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+      <p>This is the main centered column contentblah.</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.querySelector('.sidebar').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
